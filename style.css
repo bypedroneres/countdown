@@ -27,19 +27,17 @@ body {
 }
 
 .number {
-  font-size: 80px;
+  font-size: 200px;
   font-weight: 100;
-
-  /* 🔥 Fix jump */
   font-variant-numeric: tabular-nums;
-
-  width: 120px;
   text-align: center;
 }
 
 .label {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 34px;
+    text-align: center;
+  font-weight: 100;
 }
 
 /* SETTINGS BUTTON */
