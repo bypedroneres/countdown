@@ -4,13 +4,24 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+  touch-action: none; /* prevents scroll gestures */
+}
+
+body {
+  position: fixed;
+  width: 100%;
+}
+
 body {
   font-family: Inter, system-ui, sans-serif;
 }
 
 /* APP */
 .app {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,12 +116,13 @@ body {
 [data-theme="blush"] { background: #e7b6c2; }
 [data-theme="black"] { background: #000; }
 
-/* COLOR PICKER FIX */
 #input-bg-color,
 #input-font-color {
-  position: fixed;
+  position: absolute;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
 }
 
 /* PREVIEW */
@@ -132,6 +144,16 @@ body {
   border: 1px solid black;
   height: 20px;
   border-radius: 4px;
+}
+
+.save-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* MOBILE */
