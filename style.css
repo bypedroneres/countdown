@@ -133,3 +133,45 @@ body {
   height: 20px;
   border-radius: 4px;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* stack countdown vertically */
+  .countdown {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* smaller numbers */
+  .number {
+    font-size: 80px;
+  }
+
+  .label {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+
+  /* center settings panel */
+  #settings-panel {
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* optional: make button easier to tap */
+  #settings-btn {
+    bottom: 16px;
+    right: 16px;
+  }
+}
