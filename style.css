@@ -28,7 +28,7 @@ body {
 
 .number {
   font-size: 80px;
-  font-weight: 700;
+  font-weight: 100;
 
   /* 🔥 Fix jump */
   font-variant-numeric: tabular-nums;
