@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="stylesheet" href="../css/style.css" />
+<title>Countdown</title>
+</head>
+
+<body>
+
+<div class="app">
+  <div class="countdown">
+    <div class="item">
+      <div id="days" class="number">00</div>
+      <div class="label">DIAS</div>
+    </div>
+
+    <div class="item">
+      <div id="hours" class="number">00</div>
+      <div class="label">HORAS</div>
+    </div>
+
+    <div class="item">
+      <div id="minutes" class="number">00</div>
+      <div class="label">MIN</div>
+    </div>
+
+    <div class="item">
+      <div id="seconds" class="number">00</div>
+      <div class="label">SEG</div>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings-btn">⚙️</div>
+
+<div id="settings-panel">
+  <h3>Configurações</h3>
+
+  <label>Data:</label>
+  <input type="datetime-local" id="input-date"/>
+
+  <label>Temas:</label>
+  <div id="themes">
+    <div class="theme" data-theme="bubblegum"></div>
+    <div class="theme" data-theme="lofi"></div>
+    <div class="theme" data-theme="aqua"></div>
+    <div class="theme" data-theme="mint"></div>
+    <div class="theme" data-theme="honey"></div>
+    <div class="theme" data-theme="blush"></div>
+    <div class="theme" data-theme="black"></div>
+  </div>
+
+  <div class="setting-row" id="bg-row">
+    <span>Background</span>
+    <div id="bg-preview" class="preview"></div>
+    <input type="color" id="input-bg-color" />
+  </div>
+
+  <div class="setting-row" id="font-row">
+    <span>Fonte</span>
+    <div id="font-preview" class="preview"></div>
+    <input type="color" id="input-font-color" />
+  </div>
+
+  <button id="save-btn">Salvar</button>
+</div>
+
+<script src="../javascript/index.js"></script>
+
+</body>
+</html>
