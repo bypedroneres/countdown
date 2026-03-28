@@ -27,24 +27,45 @@ function applyStyles() {
 
 applyStyles();
 
-/* COUNTDOWN */
+/* HELPERS */
 function pad(n) {
   return String(n).padStart(2, "0");
 }
 
+/* COUNTDOWN (NOW ALSO COUNTS UP AFTER ZERO) */
 function update() {
   const now = new Date();
   const target = new Date(CONFIG.targetDate + ":00");
 
-  const diff = target - now;
-  if (diff <= 0) return;
+  let diff = target - now;
+  const isPast = diff < 0;
+
+  // convert to positive so math works both ways
+  diff = Math.abs(diff);
 
   const total = Math.floor(diff / 1000);
 
-  document.getElementById("days").innerText = pad(Math.floor(total / 86400));
-  document.getElementById("hours").innerText = pad(Math.floor((total % 86400) / 3600));
-  document.getElementById("minutes").innerText = pad(Math.floor((total % 3600) / 60));
-  document.getElementById("seconds").innerText = pad(total % 60);
+  const days = Math.floor(total / 86400);
+  const hours = Math.floor((total % 86400) / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  const seconds = total % 60;
+
+  document.getElementById("days").innerText = pad(days);
+  document.getElementById("hours").innerText = pad(hours);
+  document.getElementById("minutes").innerText = pad(minutes);
+  document.getElementById("seconds").innerText = pad(seconds);
+
+  // OPTIONAL label (add <div id="label"></div> in HTML if you want this)
+  const label = document.getElementById("label");
+  if (label) {
+    label.innerText = isPast ? "ago" : "left";
+  }
+
+  // OPTIONAL: trigger once when it passes zero
+  if (!window.hasPassed && isPast) {
+    window.hasPassed = true;
+    console.log("Reached target date");
+  }
 }
 
 setInterval(update, 1000);
@@ -107,6 +128,7 @@ document.getElementById("input-date").value = CONFIG.targetDate;
 
 /* COLOR PICKER POSITION */
 function openColorPicker(input, e) {
+  input.style.position = "fixed";
   input.style.left = `${e.clientX - 20}px`;
   input.style.top = `${e.clientY - 20}px`;
   input.click();
