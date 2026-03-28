@@ -5,13 +5,13 @@ const DEFAULT_CONFIG = {
 };
 
 const THEMES = {
+  black: { backgroundColor: "#000000", fontColor: "#fff" },
   bubblegum: { backgroundColor: "#f7a1c4", fontColor: "#fff" },
   lofi: { backgroundColor: "#b8a1d9", fontColor: "#fff" },
   aqua: { backgroundColor: "#9ec3da", fontColor: "#fff" },
   mint: { backgroundColor: "#9fd3c7", fontColor: "#fff" },
-  honey: { backgroundColor: "#f2d6a2", fontColor: "#000" },
-  blush: { backgroundColor: "#e7b6c2", fontColor: "#fff" },
-  black: { backgroundColor: "#000000", fontColor: "#fff" }
+  brasil: { backgroundColor: "#285f22", fontColor: "#ffdd00" },
+  white: { backgroundColor: "#fff", fontColor: "#000" }
 };
 
 let CONFIG = JSON.parse(localStorage.getItem("countdown-config")) || DEFAULT_CONFIG;

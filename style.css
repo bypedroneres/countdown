@@ -116,13 +116,14 @@ body {
 }
 
 /* theme colors */
+[data-theme="black"] { background: #000; }
 [data-theme="bubblegum"] { background: #f7a1c4; }
 [data-theme="lofi"] { background: #b8a1d9; }
 [data-theme="aqua"] { background: #9ec3da; }
 [data-theme="mint"] { background: #9fd3c7; }
-[data-theme="honey"] { background: #f2d6a2; }
-[data-theme="blush"] { background: #e7b6c2; }
-[data-theme="black"] { background: #000; }
+[data-theme="brasil"] { background: #ffdd00; }
+[data-theme="white"] { background: #ececec; }
+
 
 #input-bg-color,
 #input-font-color {
